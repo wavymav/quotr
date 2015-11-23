@@ -1,16 +1,20 @@
 import Xray from 'x-ray';
 
-const xray = new Xray();
+const x = new Xray();
 const funnyQuotes = {
-  url: '100-funny-quotes-worth-laughing-over/',
-  selectors: '.blog-quote'
+  url: 'http://www.quotery.com/lists/100-funny-quotes-worth-laughing-over/',
+  sel: '.blog-quote',
+  rank: '.blog-quote__count span',
+  quote: '.blog-quote__content a',
+  author: '.blog-quote__author a',
+  paginSel: '.page-links__inner a[rel="next"]@href',
+  dataLoc: './data/funnyQuotes.json'
 }
 
-xray(`http://www.quotery.com/lists/${funnyQuotes.url}`, funnyQuotes.selectors,
-  [{
-    rank: '.blog-quote__count span',
-    quote: '.blog-quote__content a',
-    author: '.blog-quote__author a'
-  }]
-)
-  .write('./data/results.json');
+x(funnyQuotes.url, funnyQuotes.sel,[{
+  rank: funnyQuotes.rank,
+  quote: funnyQuotes.quote,
+  author: funnyQuotes.author
+}])
+  .paginate(funnyQuotes.paginSel)
+  .write(funnyQuotes.dataLoc);
