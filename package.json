@@ -9,7 +9,11 @@
     "type": "git",
     "url": "git+https://github.com/wavymav/quotr.git"
   },
-  "keywords": [],
+  "keywords": [
+    "funny",
+    "quotes",
+    "objects"
+  ],
   "author": "Marcus Barnes <mavjbarnes@gmail.com>",
   "license": "MIT",
   "bugs": {
