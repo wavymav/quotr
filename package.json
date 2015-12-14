@@ -2,10 +2,8 @@
   "name": "quotr",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.js",
+  "main": "src/index.js",
   "scripts": {
-    "prebuild": "rm -rf dist && mkdir dist",
-    "build": "babel src -d dist && node dist/index.js"
   },
   "repository": {
     "type": "git",
