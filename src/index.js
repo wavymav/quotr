@@ -1,8 +1,18 @@
 var funnyQuotes = require('../data/funnyQuotes.json');
 
+function randomIndex(arr) {
+  var prev;
+  return function getRandomNum() {
+    var num = Math.floor(Math.random() * arr.length);
+    return prev = num === prev ? getRandomNum() : num;
+  }
+}
+
 function getRandomElement(arr) {
-    var randomIndex = Math.floor(Math.random() * arr.length);
-    return arr[randomIndex];
+  var getIndex = randomIndex(arr)
+  return function() {
+    return arr[getIndex()];
+  }
 }
 
 module.exports = {
