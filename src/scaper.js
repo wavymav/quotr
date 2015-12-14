@@ -8,7 +8,7 @@ const funnyQuotes = {
   quote: '.blog-quote__content a',
   author: '.blog-quote__author a',
   paginSel: '.page-links__inner a[rel="next"]@href',
-  dataLoc: './data/funnyQuotes.json'
+  dataLoc: './data/funnyQuotes.js'
 }
 
 x(funnyQuotes.url, funnyQuotes.sel,[{

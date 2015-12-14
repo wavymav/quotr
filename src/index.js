@@ -1,4 +1,4 @@
-var funnyQuotes = require('../data/funnyQuotes.json');
+var funnyQuotes = require('./funnyQuotes');
 
 function randomIndex(arr) {
   var prev;
